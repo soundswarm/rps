@@ -1,49 +1,54 @@
 <head>
-  <title>rps</title>
+  <title>RPS</title>
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
 </head>
 
 <body>
   <h1>Rock Paper Scissors</h1>
-  {{> score}}
-  {{#each players}}
-    {{> player}}
-  {{/each}}
-  <button class='new-game'>New Game</button>
-  <button class='reset-scores'>Reset Scores</button>
+  <h2>Score</h2>
+  
+  <div class="scores">
+    {{#each players}}
+      {{> player}}
+    {{/each}}
+  </div>
+  
+  <button class='pure-button new-game'>New Game</button>
+  <button class='pure-button reset-scores'>Reset Score</button>
 </body>
 
 <template name="choices">
-  <button class="rps" data-rps = "rock">Rock</button>
-  <button class="rps" data-rps = "paper">Paper</button>
-  <button class="rps" data-rps = "scissors">Scissors</button>
+  <button class="pure-button pure-button-active rps" data-rps = "rock">
+    Rock
+  </button>
+
+  <button class="pure-button pure-button-active rps" data-rps = "paper">
+    Paper
+  </button>
+
+  <button class="pure-button pure-button-active rps" data-rps="scissors">
+    Scissors
+  </button>
+
 </template>
 
-<template name = "player1">
+<template name="player1">
+  <h2 class="player">Player 1</h2>
   {{> choices}}
-
+  <div class="message">{{message}}</div>
 </template>
 
-<template name = "player2">
+<template name="player2">
+  <h2 class="player">Player 2</h2>
   {{> choices}}
+  <div class="message">{{message}}</div>
 </template>
 
 <template name="player">
-  <span>{{name}}</span>
-  <span>{{score}}</span>
-  <!-- <div>choice {{choice}}</div> -->
-  <!-- <div>status {{status}}</div> -->
-  <div>{{message}}</div>
-</template>
-
-
-
-
-
-
-<template name="score">
-  <h2 class="score">Scores</h2>
-  <div class="p1-score">{{p1score}}</div>
-  <div class="p2-score">{{p2score}}</div>
+  <div class="score">
+    <span class="name">{{name}}</span>
+    <span class="score">{{score}}</span>  
+  </div>
 </template>
 
 

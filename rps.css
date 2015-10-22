@@ -1,1 +1,17 @@
 /* CSS declarations go here */
+
+.scores {
+  margin-bottom: 20px;
+}
+
+.name {
+  padding-right: 20px;
+}
+
+.player {
+  padding-top: 10px;
+}
+.message {
+  color: red;
+  margin: 20px;
+}
