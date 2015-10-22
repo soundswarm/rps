@@ -1,0 +1,45 @@
+<head>
+  <title>rps</title>
+</head>
+
+<body>
+  <h1>Rock Paper Scissors</h1>
+  {{> score}}
+  {{#each players}}
+    {{> player}}
+  {{/each}}
+  <div>{{winner}}</div>
+
+</body>
+
+<template name="choices">
+  <button class="rps" data-rps = "rock">Rock</button>
+  <button class="rps" data-rps = "paper">Paper</button>
+  <button class="rps" data-rps = "scissors">Scissors</button>
+</template>
+
+<template name = "player1">
+  {{> choices}}
+
+</template>
+
+<template name = "player2">
+  {{> choices}}
+</template>
+
+<template name="player">
+  <div>name {{name}}</div>
+  <div>score {{score}}</div>
+  <div>choice {{choice}}</div>
+  <div>status {{status}}</div>
+</template>
+
+
+<template name="score">
+  <h2 class="score">Scores</h2>
+  <div class="p1-score">{{p1score}}</div>
+  <div class="p2-score">{{p2score}}</div>
+</template>
+
+
+

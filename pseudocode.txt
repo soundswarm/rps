@@ -1,0 +1,21 @@
+
+resetScores
+  p1.score = 0
+  p2.score = 0
+
+
+display score
+
+display r,p,s buttons 
+display other player status
+on click
+  hide buttons
+  post r,p,or s to p1.throw
+  p1.status = threw
+
+
+on server
+  if p1.throw and p2.throw
+    chooseWinner
+    Post to score
+
