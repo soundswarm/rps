@@ -8,8 +8,8 @@
   {{#each players}}
     {{> player}}
   {{/each}}
-  <div>{{winner}}</div>
-
+  <button class='new-game'>New Game</button>
+  <button class='reset-scores'>Reset Scores</button>
 </body>
 
 <template name="choices">
@@ -28,11 +28,16 @@
 </template>
 
 <template name="player">
-  <div>name {{name}}</div>
-  <div>score {{score}}</div>
-  <div>choice {{choice}}</div>
-  <div>status {{status}}</div>
+  <span>{{name}}</span>
+  <span>{{score}}</span>
+  <!-- <div>choice {{choice}}</div> -->
+  <!-- <div>status {{status}}</div> -->
+  <div>{{message}}</div>
 </template>
+
+
+
+
 
 
 <template name="score">
